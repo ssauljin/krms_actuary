@@ -4,7 +4,8 @@
 
 ## 파일
 
-- `krms_actexam_ver1.docx` — 원고
+- `krms_actexam_ver2.docx` — 최신 원고 (계산기 정책 비교 추가)
+- `krms_actexam_ver1.docx` — 이전 원고
 - `template/jrm_template.docx` — 학회 Word 템플릿
 - `src/manuscript.py` — 템플릿에 본문·표·참고문헌·각주를 채워 넣는 스크립트 (원고 내용은 이 파일에서 수정)
 - `build.sh` — 원고 재생성

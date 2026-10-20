@@ -89,12 +89,13 @@ TITLE_KO = "다변화하는 위험 환경과 보험계리사 자격시험의 데
 TITLE_EN = "Assessing Data Science Competence in Actuarial Qualification: A Comparison of Korea, the United States, Canada and the United Kingdom"
 
 ABSTRACT_KO = ("본 연구는 다변화하는 위험과 고도화하는 위험관리 기법에 대응하기 위하여 한국 보험계리사 시험에 통계 및 데이터사이언스 관련 "
-    "평가를 확대할 필요가 있는지를 검토한다. 이를 위해 미국계리사협회(SOA)의 현행 자격 경로를 기준으로 데이터사이언스 역량을 "
-    "기초이론, 기초실습, 과제형 심화실습의 세 단계로 구분하는 비교 틀을 설정하고, 한국 보험계리사 시험과 SOA, 미국손해보험계리사협회(CAS), "
-    "캐나다계리사협회(CIA), 영국계리사협회(IFoA)의 시험제도를 각 기관의 공개 자료에 근거하여 비교하였다. 분석 결과 해외 4개 기관은 "
-    "평가 방식은 서로 다르지만 모두 통계적 학습 이론을 자격 요건에 포함하고, 소프트웨어와 데이터를 활용하는 실습형 평가를 운영하고 있었다. "
-    "반면 한국 시험에는 이에 대응하는 명시적 평가 요소가 확인되지 않았다. 이러한 결과를 바탕으로 출제범위의 단계적 확대와 실습형 평가의 도입 방안을 논의한다.")
-KW_KO = "보험계리사 시험, 데이터사이언스, 예측분석, 계리사 교육, 자격제도 비교"
+    "평가를 확대할 필요가 있는지를 검토한다. 미국계리사협회(SOA)의 자격 경로를 기준으로 데이터사이언스 역량을 기초이론, 기초실습, "
+    "과제형 심화실습의 세 단계로 구분하고, 한국 시험과 SOA, 미국손해보험계리사협회(CAS), 캐나다계리사협회(CIA), 영국계리사협회(IFoA)의 "
+    "시험제도를 공개 자료에 근거하여 비교하였다. 해외 4개 기관은 평가 방식은 다르지만 모두 통계적 학습 이론을 자격 요건에 포함하고 "
+    "실습형 평가를 운영하는 반면, 한국 시험에는 이에 대응하는 평가 요소가 확인되지 않았다. 허용 계산기 정책에서도 해외 기관은 "
+    "공학용·재무용 계산기나 스프레드시트를 허용하는 데 비해 한국 시험은 단순계산기만 허용하였다. 이를 바탕으로 출제범위의 단계적 확대, "
+    "실습형 평가의 도입, 계산 도구 정책의 정비 방안을 논의한다.")
+KW_KO = "보험계리사 시험, 데이터사이언스, 예측분석, 계리사 교육, 자격제도 비교, 계산기 정책"
 
 ABSTRACT_EN = ("This study examines whether the Korean actuarial examination should place greater weight on statistics and data science "
     "in response to diversifying risks and increasingly sophisticated risk management techniques. Using the current Associateship "
@@ -103,9 +104,11 @@ ABSTRACT_EN = ("This study examines whether the Korean actuarial examination sho
     "qualification systems of the SOA, the Casualty Actuarial Society (CAS), the Canadian Institute of Actuaries (CIA) and the "
     "Institute and Faculty of Actuaries (IFoA), based on the published materials of each body. All four overseas bodies include "
     "statistical learning theory in their requirements and operate practical assessments that use software and data, although their "
-    "assessment methods differ. No explicit counterpart was found in the Korean examination. Based on these findings, we discuss a "
-    "phased expansion of the syllabus and the introduction of practical assessments.")
-KW_EN = "Actuarial Examination, Data Science, Predictive Analytics, Actuarial Education, Comparative Study of Qualifications"
+    "assessment methods differ. No explicit counterpart was found in the Korean examination. A comparison of calculator policies shows a "
+    "similar gap: the overseas bodies permit scientific and financial calculators or spreadsheets, whereas the Korean examination allows only "
+    "simple calculators without data storage. Based on these findings, we discuss a phased expansion of the syllabus, the introduction of "
+    "practical assessments and a revision of the calculator policy.")
+KW_EN = "Actuarial Examination, Data Science, Predictive Analytics, Actuarial Education, Comparative Study of Qualifications, Calculator Policy"
 
 # title cell
 x = re.sub(r'(<w:pStyle w:val="ad"/>.*?</w:pPr>).*?(</w:p>)', lambda m: m.group(1) + run(TITLE_KO) + m.group(2), x, count=1, flags=re.S)
@@ -129,8 +132,8 @@ B = []
 B.append(h1("Ⅰ. 서론"))
 B.append(body("보험회사가 관리해야 하는 위험은 기후 변화, 인구 고령화, 사이버 위험 등으로 다변화하고 있으며, 이를 측정하고 관리하는 기법 역시 일반화선형모형(GLM)을 넘어 트리 기반 앙상블, 비지도학습 등 통계적 학습 방법으로 확장되고 있다. 이에 따라 주요국 계리사 단체는 최근 수년간 자격시험에서 통계 및 데이터사이언스 역량을 평가하는 비중을 꾸준히 늘려 왔다. 미국계리사협회(Society of Actuaries, 이하 SOA)는 위험모형 통계(SRM), 예측분석(PA), 예측분석 심화(ATPA)로 이어지는 평가 체계를 갖추었고, 미국손해보험계리사협회(Casualty Actuarial Society, 이하 CAS)는 2026년부터 예측분석 시험과 과제형 프로젝트를 준회원 자격의 필수 요건으로 지정하였다(CAS, 2024)."))
 B.append(body("국내에서는 IFRS 17과 신지급여력제도(K-ICS)의 시행 이후 보험계리사 수요가 크게 늘었으나, 보험연구원은 현행 보험계리사 시험이 실무와 충분히 연계되지 못하고 있다고 지적한 바 있다(CEO스코어데일리, 2026). 그러나 국내 시험이 데이터사이언스 역량을 어느 정도 평가하고 있는지를 해외 제도와 체계적으로 비교한 자료는 많지 않다."))
-B.append(body("본 연구는 SOA의 평가 체계를 기준으로 데이터사이언스 역량을 기초이론, 기초실습, 과제형 심화실습의 세 단계로 구분하고, 한국 보험계리사 시험과 SOA, CAS, 캐나다계리사협회(Canadian Institute of Actuaries, 이하 CIA), 영국계리사협회(Institute and Faculty of Actuaries, 이하 IFoA)의 시험제도를 이 틀에 따라 비교한다. 이를 통해 한국 시험제도의 공백을 확인하고 개선 방향을 제시하는 것이 본 연구의 목적이다. 분석은 2026년 10월 현재 각 기관이 공개한 시험 안내, 출제범위, 자격 경로 자료에 근거하였다."))
-B.append(body("본 논문의 구성은 다음과 같다. Ⅱ장에서는 비교 틀을 제시하고, Ⅲ장에서는 기관별 시험제도를 검토한다. Ⅳ장에서는 비교 결과를 종합하고 시사점을 도출하며, Ⅴ장에서 결론과 연구의 한계를 서술한다."))
+B.append(body("본 연구는 SOA의 평가 체계를 기준으로 데이터사이언스 역량을 기초이론, 기초실습, 과제형 심화실습의 세 단계로 구분하고, 한국 보험계리사 시험과 SOA, CAS, 캐나다계리사협회(Canadian Institute of Actuaries, 이하 CIA), 영국계리사협회(Institute and Faculty of Actuaries, 이하 IFoA)의 시험제도를 이 틀에 따라 비교한다. 이를 통해 한국 시험제도의 공백을 확인하고 개선 방향을 제시하는 것이 본 연구의 목적이다. 아울러 수험자가 사용할 수 있는 계산 도구는 출제 가능한 문항의 범위와 직결되므로, 시험 운영 측면에서 각 기관의 허용 계산기 정책도 함께 비교한다. 분석은 2026년 10월 현재 각 기관이 공개한 시험 안내, 출제범위, 자격 경로 자료에 근거하였다."))
+B.append(body("본 논문의 구성은 다음과 같다. Ⅱ장에서는 비교 틀을 제시하고, Ⅲ장에서는 기관별 시험제도를 검토한다. Ⅳ장에서는 비교 결과를 종합하고 시사점을 도출하며, Ⅴ장에서는 허용 계산기 정책을 비교한다. Ⅵ장에서 결론과 연구의 한계를 서술한다."))
 
 B.append(blank())
 B.append(h1("Ⅱ. 비교 틀"))
@@ -169,7 +172,7 @@ B.append(body("기초이론은 CIA 인증 대학의 학위(Pathway 1)로 인정�
 
 B.append(h2("5. 영국계리사협회(IFoA)"))
 B.append(body("IFoA의 핵심원리(Core Principles) 과목 가운데 계리통계(CS1)와 위험모형 및 생존분석(CS2)이 기초이론에 해당한다. CS1은 통계적 추론, GLM을 포함한 회귀모형, 베이지안 통계의 기초를 다루고, CS2는 위험모형, 시계열 분석, 확률과정, 생존분석과 함께 머신러닝에 대한 개괄적 소개를 포함한다(IFoA, 2026a). 다만 SOA의 SRM이나 CAS의 MAS-II와 비교하면 통계적 학습 기법의 비중은 상대적으로 작다."))
-B.append(body("IFoA의 특징은 이론 과목 안에 실습형 평가를 결합하였다는 점이다. CS1과 CS2는 각각 이론 중심의 A 시험(3시간 20분)과 R을 사용하는 문제해결형 B 시험(1시간 50분)으로 구성되며, 두 시험은 같은 회차에 응시해야 한다(IFoA, 2026a). 두 시험은 70대 30의 비율로 하나의 점수로 합산된다(IFoA, 2026b). 이와 별도로 핵심실무(Core Practices) 과목인 모델링 실무(CP2)는 주어진 시나리오와 데이터로 데이터 분석과 스프레드시트 모형 구축을 수행하고 감사 추적(audit trail)과 요약 보고서를 작성하게 하며, 문서화에 45%의 비중을 둔다(IFoA, 2025). CP2는 시간제한이 있는 시험이지만 모형 구축, 문서화, 결과 소통을 함께 평가한다는 점에서 과제형 평가의 요소를 일부 갖고 있다. 한편 IFoA는 2020년 사우샘프턴 대학교와 함께 데이터사이언스 인증과정(Certificate in Data Science)을 개설하였으나, 이는 자격 요건과 별개인 독립 과정이다(University of Southampton, 2020). 2026년 출제범위 변경에서도 CS1, CS2, CP2의 데이터사이언스 관련 내용에는 변화가 없었다(IFoA, 2026c)."))
+B.append(body("IFoA의 특징은 이론 과목 안에 실습형 평가를 결합하였다는 점이다. CS1과 CS2는 각각 이론 중심의 A 시험(3시간 20분)과 R을 사용하는 문제해결형 B 시험(1시간 50분)으로 구성되며, 두 시험은 같은 회차에 응시해야 한다(IFoA, 2026a). 두 시험은 70대 30의 비율로 하나의 점수로 합산된다(IFoA, 2026b). 이와 별도로 핵심실무(Core Practices) 과목인 모델링 실무(CP2)는 주어진 시나리오와 데이터로 데이터 분석과 스프레드시트 모형 구축을 수행하고 감사 추적(audit trail)과 요약 보고서를 작성하게 하며, 문서화에 45%의 비중을 둔다(IFoA, 2025a). CP2는 시간제한이 있는 시험이지만 모형 구축, 문서화, 결과 소통을 함께 평가한다는 점에서 과제형 평가의 요소를 일부 갖고 있다. 한편 IFoA는 2020년 사우샘프턴 대학교와 함께 데이터사이언스 인증과정(Certificate in Data Science)을 개설하였으나, 이는 자격 요건과 별개인 독립 과정이다(University of Southampton, 2020). 2026년 출제범위 변경에서도 CS1, CS2, CP2의 데이터사이언스 관련 내용에는 변화가 없었다(IFoA, 2026c)."))
 
 B.append(blank())
 B.append(h1("Ⅳ. 비교 결과와 시사점"))
@@ -192,15 +195,38 @@ B.append(body("둘째, 실습형 평가는 형식이 다양하다는 점에서 �
 B.append(body("셋째, 해외 기관들은 개편을 단계적으로 진행하였다. CAS는 2018년 MAS 시험으로 이론을 먼저 반영하고 2026년에 PCPA를 필수화하였으며, CIA는 기존 시험 크레딧을 인정하면서 자체 모듈로 실습을 보완하였다. 한국 역시 출제범위 확대를 우선 추진하고, 실습형 평가는 시험 운영 여건을 갖춘 뒤 도입하는 단계적 접근을 검토할 수 있다."))
 
 B.append(blank())
-B.append(h1("Ⅴ. 결론"))
-B.append(body("본 연구는 데이터사이언스 역량을 기초이론, 기초실습, 과제형 심화실습의 세 단계로 구분하고, 한국 보험계리사 시험과 SOA, CAS, CIA, IFoA의 시험제도를 비교하였다. 해외 4개 기관은 평가 방식이 서로 다르지만 모두 이론과 실습 단계를 자격 요건에 포함하고 있었고, 한국 시험에서는 이에 대응하는 명시적 평가 요소가 확인되지 않았다. 다변화하는 위험과 고도화하는 위험관리 기법에 대응할 수 있는 계리 인력을 양성하기 위해서는 한국 보험계리사 시험에도 통계 및 데이터사이언스 관련 평가를 확대할 필요가 있다."))
-B.append(body("본 연구는 다음과 같은 한계를 가진다. 첫째, 비교는 각 기관이 공개한 안내 자료와 출제범위에 근거하였으므로 실제 문항의 난이도나 출제 비중까지는 반영하지 못하였다. 둘째, 한국 시험의 출제범위는 공식 출제기준을 통해 과목별 세부 내용을 확인할 필요가 있다. 셋째, CIA는 비인증 대학 출신자를 위한 새로운 경로의 도입을 예고하는 등 각국 제도가 계속 변화하고 있으므로, 후속 연구에서 이를 반영할 필요가 있다."))
+B.append(h1("Ⅴ. 시험 운영 측면의 비교: 허용 계산기 정책"))
+B.append(body("데이터사이언스 역량 평가를 확대하려면 출제범위뿐 아니라 수험자가 사용할 수 있는 계산 도구도 함께 고려해야 한다. 계산 도구가 단순계산기로 제한되면 반복 계산이나 행렬 연산이 필요한 문항을 출제하기 어렵고, 실습형 평가의 도입도 제약을 받는다. 이 장에서는 허용 계산기의 종류, 메모리 삭제 확인, 화면 표시 기능, 복수 지참 허용 여부의 네 가지 항목으로 5개 기관의 정책을 비교한다. 화면 표시 기능은 여러 줄의 식과 결과를 함께 보여 주는 다행 표시(multi-line display)와 그래프 표시 기능을 기준으로 보았다."))
+B.append(h2("1. 기관별 정책"))
+B.append(body("**한국.** 2026년 제49회 시험 시행계획 공고에 따르면 보험계리사 시험의 모든 과목에서 자료를 저장할 수 없는 단순계산기만 개별 지참하여 사용할 수 있으며, 공학용·재무용 등 데이터 저장 기능이 있는 전자계산기는 사용할 수 없다(금융감독원, 2026). 저장 기능 자체를 금지하므로 메모리 삭제 확인 절차는 규정되어 있지 않고, 화면 표시 방식과 지참 개수에 대한 별도 규정도 없다."))
+B.append(body("**SOA.** 텍사스인스트루먼트(TI)의 6개 모델만 허용한다. 재무용인 BA-35, BA II Plus, BA II Plus Professional과 공학용인 TI-30Xa, TI-30X II, TI-30X MultiView가 이에 해당한다. TI-30X II, TI-30X MultiView, BA II Plus 계열은 응시자가 입실할 때 감독관이 메모리를 삭제하며, BA II Plus 계열은 이 과정에서 공장 초기값으로 재설정된다. 다행 표시 모델인 TI-30X MultiView는 허용되지만 그래프 계산기는 목록에 없다. 승인된 계산기는 여러 대 사용할 수 있으나, 목록에 없는 계산기를 사용하면 실격 처리되어 채점하지 않는다(SOA, 2026d)."))
+B.append(body("**CAS.** SOA와 같은 6개 모델을 허용한다. 다만 메모리 삭제는 응시자가 시험 시작 전에 감독관에게 삭제된 상태를 보여 주는 방식이며, 시험실에는 1인당 1대만 반입할 수 있고 나머지는 사물함에 보관해야 한다. 또한 컴퓨터 기반 시험 화면에 TI-30XS MultiView 가상 계산기가 내장되어 있어, 계산기를 지참하지 않아도 응시할 수 있다(CAS, 2025)."))
+B.append(body("**CIA.** ACIA 종합시험(Capstone Exam)에서는 표준 계산기(standard calculator) 사용을 허용하고 스마트 기기의 계산 기능은 금지한다. 시험에는 Excel과 RStudio가 필수이며, 답안을 R이나 Excel 파일로 제출할 수 있고 다중 모니터 사용도 허용된다(CIA, 2026d). '표준 계산기'의 범위와 메모리 삭제, 지참 개수에 대한 규정은 공개 자료에서 확인되지 않았다[[fn:4]]."))
+B.append(body("**IFoA.** 2026년 9월 기술·환경 정책은 실물 계산기라면 제조사나 모델을 제한하지 않고, 온라인 계산기는 어떠한 경우에도 금지하며, 모든 시험에서 계산 보조 수단으로 Excel을 사용할 수 있도록 한다(IFoA, 2026d). 원격 감독 시험 안내서도 휴대전화나 온라인 계산기만 금지하고 그 밖의 계산기에는 제한이 없다고 밝히고 있다(IFoA, 2025b). 메모리 삭제와 지참 개수에 대한 규정은 공개 자료에서 확인되지 않았다."))
+B.append(caption("<표 4> 기관별 허용 계산기 정책"))
+B.append(table([1000, 2011, 1340, 1340, 1340], ["기관", "허용 종류", "메모리 삭제 확인", "화면 표시 기능", "복수 지참"], [
+    ["한국", "단순계산기만 허용\n(공학용·재무용 금지)", "규정 없음\n(저장 기능 자체 금지)", "규정 없음", "규정 없음"],
+    ["SOA", "TI 지정 6개 모델\n(재무용·공학용)", "감독관이\n입실 시 삭제", "다행 표시 허용\n(그래프 계산기 불가)", "허용"],
+    ["CAS", "TI 지정 6개 모델\n(재무용·공학용)", "응시자가\n감독관에게 확인", "다행 표시 허용\n(화면 내 가상 계산기)", "1대만 반입"],
+    ["CIA", "표준 계산기\n(스마트 기기 불가)\nExcel·R 필수", "확인되지 않음", "규정 없음\n(다중 모니터 허용)", "확인되지 않음"],
+    ["IFoA", "실물 계산기 제한 없음\n(온라인 계산기 불가)\nExcel 허용", "확인되지 않음", "제한 없음", "확인되지 않음"],
+], fills={(0, 1): GAP}))
+B.append(note("주: '확인되지 않음'은 검토한 공개 자료에 해당 규정이 없음을 뜻함.\n자료: 금융감독원(2026), SOA(2026d), CAS(2025), CIA(2026d), IFoA(2025b; 2026d)를 바탕으로 저자 작성."))
+B.append(h2("2. 시사점"))
+B.append(body("한국 시험은 5개 기관 가운데 유일하게 공학용·재무용 계산기를 금지한다. SOA와 CAS는 재무용과 공학용 계산기를 허용하되 지정 모델 목록과 메모리 삭제 확인으로 부정행위 위험을 관리하고, CIA와 IFoA는 컴퓨터 기반 시험에서 Excel과 R 같은 분석 도구까지 허용한다. 계산 도구의 제한은 출제 가능한 문항의 범위를 좁힌다. 현행 정책에서는 연금 현가나 회귀계수처럼 반복 계산이 필요한 값을 단순계산기로 구해야 하므로, 시험 시간이 개념의 이해와 해석보다 계산 절차에 쓰이게 된다."))
+B.append(body("따라서 데이터사이언스 평가의 확대와 함께 계산기 정책의 정비를 검토할 필요가 있다. 단기적으로는 SOA·CAS와 같이 지정 모델 목록을 두고 시험 시작 전에 메모리 삭제를 확인하는 방식으로 공학용·재무용 계산기를 허용할 수 있다. 장기적으로 실습형 평가를 도입한다면 CIA·IFoA와 같이 컴퓨터 기반 시험 환경에서 스프레드시트나 통계 소프트웨어를 사용하게 하는 방안을 함께 고려할 수 있다. 복수 지참은 SOA가 허용하고 CAS가 1대로 제한하는 등 기관마다 판단이 다르므로, 국내 시험의 감독 여건에 맞추어 정할 수 있을 것이다."))
+
+B.append(blank())
+B.append(h1("Ⅵ. 결론"))
+B.append(body("본 연구는 데이터사이언스 역량을 기초이론, 기초실습, 과제형 심화실습의 세 단계로 구분하고, 한국 보험계리사 시험과 SOA, CAS, CIA, IFoA의 시험제도를 비교하였다. 해외 4개 기관은 평가 방식이 서로 다르지만 모두 이론과 실습 단계를 자격 요건에 포함하고 있었고, 한국 시험에서는 이에 대응하는 명시적 평가 요소가 확인되지 않았다. 다변화하는 위험과 고도화하는 위험관리 기법에 대응할 수 있는 계리 인력을 양성하기 위해서는 한국 보험계리사 시험에도 통계 및 데이터사이언스 관련 평가를 확대할 필요가 있다. 또한 허용 계산기 정책을 비교한 결과 한국 시험만이 공학용·재무용 계산기를 금지하고 있어, 평가 범위의 확대와 함께 계산 도구 정책도 정비할 필요가 있다."))
+B.append(body("본 연구는 다음과 같은 한계를 가진다. 첫째, 비교는 각 기관이 공개한 안내 자료와 출제범위에 근거하였으므로 실제 문항의 난이도나 출제 비중까지는 반영하지 못하였다. 둘째, 한국 시험의 출제범위는 공식 출제기준을 통해 과목별 세부 내용을 확인할 필요가 있다. 셋째, CIA는 비인증 대학 출신자를 위한 새로운 경로의 도입을 예고하는 등 각국 제도가 계속 변화하고 있으므로, 후속 연구에서 이를 반영할 필요가 있다. 넷째, CIA와 IFoA의 계산기 정책 가운데 메모리 삭제와 지참 개수에 관한 사항은 공개 자료에서 확인하지 못하였다."))
 
 B.append(pagebreak())
 # ---------------------------------------------------------------- references
 ACC = "(접속일: 2026.10.20.)"
 REF_KO = [
     f"금융감독원. 「2021년도 제44회 보험계리사 및 손해사정사 시험 시행계획 공고」. 2021. https://support.epasskorea.com/hc/ko/article_attachments/900007490683 {ACC}",
+    f"금융감독원. 「2026년도 제49회 보험계리사 및 손해사정사 시험 시행계획 공고」. 2026.1.9. 큐스터디 게재본. https://www.qstudy.kr/web/212 {ACC}",
     f"조세금융신문. 「금감원 “올해 보험계리사 120명, 손해사정사 506명 최종합격”」. 2025.9.26. https://www.tfmedia.co.kr/mobile/article.html?no=195820 {ACC}",
     f"CEO스코어데일리. 「보험부채 계산할 사람이 부족하다…‘계리사 모시기’ 승자는 삼성화재 179명」. 2026.6. https://m.ceoscoredaily.com/page/view/2026061820453141810 {ACC}",
 ]
@@ -213,18 +239,22 @@ REF_WEB = [
     f"Canadian Institute of Actuaries (CIA). \"Pathway 2.\" 2026a. https://www.cia-ica.ca/becoming-a-member/qualification-pathways/pathway-2/ {ACC}",
     f"Canadian Institute of Actuaries (CIA). \"ACIA Syllabus.\" 2026b. https://cia-ica.ca/becoming-a-member/becoming-an-associate/acia-syllabus/ {ACC}",
     f"Canadian Institute of Actuaries (CIA). \"Education FAQ.\" 2026c. https://cia-ica.ca/becoming-a-member/education-faq/ {ACC}",
+    f"Canadian Institute of Actuaries (CIA). \"ACIA Modules and Capstone Exam.\" 2026d. https://www.cia-ica.ca/becoming-a-member/becoming-an-associate/acia-modules-and-capstone-exam/ {ACC}",
     f"Casualty Actuarial Society (CAS). \"Modern Actuarial Statistics I and II: New Exams for an Evolving Profession.\" CAS Student Central, 2017. https://www.casstudentcentral.org/?p=3040 {ACC}",
     f"Casualty Actuarial Society (CAS). \"Exam MAS-II Content Outline.\" 2023. https://www.casact.org/sites/default/files/2022-12/MASII_Content_Outline_Fall-2023.pdf {ACC}",
     f"Casualty Actuarial Society (CAS). \"Property and Casualty Predictive Analytics (PCPA) FAQ.\" 2024. https://www.casact.org/sites/default/files/2024-05/CAS_PCPA_FAQ.pdf {ACC}",
     f"Casualty Actuarial Society (CAS). \"2025 Syllabus of Basic Education.\" 2025. https://casact.org/sites/default/files/2025-01/2025_SOBE.pdf {ACC}",
-    f"Institute and Faculty of Actuaries (IFoA). \"CP2 Modelling Practice Syllabus 2025.\" 2025. https://actuaries.org.uk/media/scjb3a3s/cp2-modelling-practice-syllabus-2025.pdf {ACC}",
+    f"Institute and Faculty of Actuaries (IFoA). \"CP2 Modelling Practice Syllabus 2025.\" 2025a. https://actuaries.org.uk/media/scjb3a3s/cp2-modelling-practice-syllabus-2025.pdf {ACC}",
+    f"Institute and Faculty of Actuaries (IFoA). \"Examination Handbook for Remotely Invigilated Candidates.\" Sept. 2025b. https://actuaries.org.uk/media/5qmd1rw5/remotely-invigilated-examination-handbook-september-2025.pdf {ACC}",
     f"Institute and Faculty of Actuaries (IFoA). \"Actuarial Statistics.\" 2026a. https://actuaries.org.uk/qualify/curriculum/actuarial-statistics/ {ACC}",
     f"Institute and Faculty of Actuaries (IFoA). \"Frequently Asked Questions.\" 2026b. https://actuaries.org.uk/qualify/curriculum/frequently-asked-questions/ {ACC}",
     f"Institute and Faculty of Actuaries (IFoA). \"2026 Syllabus Changes.\" 2026c. https://actuaries.org.uk/media/444hp2jy/2026-syllabus-changes.pdf {ACC}",
+    f"Institute and Faculty of Actuaries (IFoA). \"Technology and Environment Policy.\" Sept. 2026d. https://actuaries.org.uk/media/agdpgyw0/technology-and-environment-policy-final-sept-2026.pdf {ACC}",
     f"Insurance Portal. \"New Canadian Institute of Actuaries President Concerned about Climate.\" 2021. https://insurance-portal.ca/article/new-canadian-institute-of-actuaries-president-concerned-about-climate/ {ACC}",
     f"Society of Actuaries (SOA). \"Advanced Topics in Predictive Analytics (ATPA) Assessment.\" 2026a. https://www.soa.org/education/exam-req/edu-exam-atpa/ {ACC}",
     f"Society of Actuaries (SOA). \"Predictive Analytics (PA) Exam.\" 2026b. https://www.soa.org/education/exam-req/edu-exam-pa-detail/ {ACC}",
     f"Society of Actuaries (SOA). \"Statistics for Risk Modeling (SRM) Exam.\" 2026c. https://www.soa.org/education/exam-req/edu-exam-srm-detail/ {ACC}",
+    f"Society of Actuaries (SOA). \"Use of Calculators and Other Assistance in Writing Examinations.\" 2026d. https://www.soa.org/education/exam-req/exam-day-info/edu-calculators.aspx {ACC}",
     f"University of Southampton. \"Southampton Data Science Academy to Deliver IFoA Certificate in Data Science.\" 2020. https://www.southampton.ac.uk/wsi/news/2020/02/ifoa-certification.page {ACC}",
 ]
 def ref(s): return para(run(s, sz=20), "aa", '<w:jc w:val="left"/>')
@@ -247,12 +277,13 @@ open(doc_path, "w", encoding="utf8").write(x)
 
 # ---------------------------------------------------------------- footnotes
 FN["2"] = "한국보험계리사회(Institute of Actuaries of Korea)는 계리사의 직업 단체로서 자격시험을 주관하지 않는다. 본 연구에서 비교하는 대상은 국가자격시험인 보험계리사 시험이다."
+FN["4"] = "CIA의 FCIA 시험 응시자 지침(Participant Guidelines)에도 허용 도구에 관한 규정이 있을 수 있으나, 본 연구에서는 해당 문서의 원문을 확인하지 못하였다."
 FN["3"] = "ACIA 자격의 종합시험(Capstone Exam)은 오픈북 형식의 응용·통합형 시험으로, 예측분석 내용을 일부 포함할 수 있으나 데이터사이언스 과제를 독립적으로 평가하는 시험은 아니다(CIA, 2026b)."
 f = open(fn_path, encoding="utf8").read()
 add = "".join(
     f'<w:footnote w:id="{i}"><w:p><w:pPr><w:pStyle w:val="af"/></w:pPr>'
     f'<w:r><w:rPr><w:vertAlign w:val="superscript"/></w:rPr><w:footnoteRef/></w:r>{run(" " + t, sz=18)}</w:p></w:footnote>'
-    for i, t in FN.items())
+    for i, t in sorted(FN.items(), key=lambda kv: int(kv[0])))
 f = f.replace("</w:footnotes>", add + "</w:footnotes>")
 open(fn_path, "w", encoding="utf8").write(f)
 print("ok")
